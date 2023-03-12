@@ -1,0 +1,12 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                 Maximum Likelihood Estimation for Discrete Multivariate Vasicek Processes           %
+%                 (C) Michael Pokojovy, Ebenezer Nkum and Thomas M. Fullerton, Jr. (2023)             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+This Matlab package implements the ML estimator for discrete multivariate Vasicek processes
+developed by Michael Pokojovy, Ebenezer Nkum and Thomas M. Fullerton, Jr.
+
+Run main.m file. Adjust settings if necessary.
+
+Copyright: Michael Pokojovy, Ebenezer Nkum and Thomas M. Fullerton, Jr. (2023)
+See license for license terms and conditions
