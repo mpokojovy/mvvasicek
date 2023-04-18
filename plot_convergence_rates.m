@@ -55,7 +55,7 @@ function plot_convergence_rates(R_ast, A, Sigma, R0, T_array, nrep)
     title('Estimator $\hat{\bf{R}}^{\ast}$', 'interpreter', 'latex', 'FontSize', 18);
     xlabel("Calibration time horizon (days)", 'interpreter', 'latex', 'FontSize', 18);
     ylabel("Empirical root-MSE", 'interpreter', 'latex', 'FontSize', 18);
-    legend('Our ML', 'OLS', 'Location', 'NorthWest', 'interpreter', 'latex', 'FontSize', 14);
+    legend('Our MLE', 'OLS', 'Location', 'NorthWest', 'interpreter', 'latex', 'FontSize', 14);
 
     subplot_tight(1, 3, 2, [0.08 0.04]);
     hold on;
@@ -67,7 +67,7 @@ function plot_convergence_rates(R_ast, A, Sigma, R0, T_array, nrep)
     title('Estimator $\hat{\bf{A}}$', 'interpreter', 'latex', 'FontSize', 18);
     xlabel("Calibration time horizon (days)", 'interpreter', 'latex', 'FontSize', 18);
     ylabel("Empirical root-MSE", 'interpreter', 'latex', 'FontSize', 18);
-    legend('Our ML', 'OLS', 'Location', 'NorthWest', 'interpreter', 'latex', 'FontSize', 14);
+    legend('Our MLE', 'OLS', 'Location', 'NorthWest', 'interpreter', 'latex', 'FontSize', 14);
 
     subplot_tight(1, 3, 3, [0.08 0.06]);
     hold on;
@@ -79,5 +79,18 @@ function plot_convergence_rates(R_ast, A, Sigma, R0, T_array, nrep)
     title('Estimator $\hat{\bf{\Sigma}}$', 'interpreter', 'latex', 'FontSize', 18);
     xlabel("Calibration time horizon (days)", 'interpreter', 'latex', 'FontSize', 18);
     ylabel("Empirical root-MSE", 'interpreter', 'latex', 'FontSize', 18);
-    legend('Our ML', 'OLS', 'Location', 'NorthWest', 'interpreter', 'latex', 'FontSize', 14);
+    legend('Our MLE', 'OLS', 'Location', 'NorthWest', 'interpreter', 'latex', 'FontSize', 14);
+
+    %%
+    figure;
+    set(gcf, 'PaperUnits', 'centimeters');
+    xSize = 15; ySize = 12;
+    xLeft = (21 - xSize)/2; yTop = (30 - ySize)/2;
+    set(gcf,'PaperPosition', [xLeft yTop xSize ySize]);
+    set(gcf,'Position', [0 0 xSize*50 ySize*50]);
+
+    plot(T_array, sqrt(mean(Sigma_errors_1, 2))./sqrt(mean(Sigma_errors_0, 2)), 'k-', 'LineWidth', 1.5);
+    title('MSE-root ratio (MLE to OLS) for $\hat{\bf{\Sigma}}$', 'interpreter', 'latex', 'FontSize', 18);
+    xlabel("Calibration time horizon (days)", 'interpreter', 'latex', 'FontSize', 18);
+    ylabel("Empirical root-MSE ratio", 'interpreter', 'latex', 'FontSize', 18);
 end
