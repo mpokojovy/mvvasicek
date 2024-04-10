@@ -90,7 +90,7 @@ function plot_convergence_rates(R_ast, A, Sigma, R0, T_array, nrep)
     set(gcf,'Position', [0 0 xSize*50 ySize*50]);
 
     plot(T_array, sqrt(mean(Sigma_errors_1, 2))./sqrt(mean(Sigma_errors_0, 2)), 'k-', 'LineWidth', 1.5);
-    title('MSE-root ratio (MLE to OLS) for $\hat{\bf{\Sigma}}$', 'interpreter', 'latex', 'FontSize', 18);
+    title('Root-MSE ratio (MLE to OLS) for $\hat{\bf{\Sigma}}$', 'interpreter', 'latex', 'FontSize', 18);
     xlabel("Calibration time horizon (days)", 'interpreter', 'latex', 'FontSize', 18);
     ylabel("Empirical root-MSE ratio", 'interpreter', 'latex', 'FontSize', 18);
 end
